@@ -211,6 +211,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start(update, context)
         return
 
+    
     # Сохраняем запись
     bookings[time] = {
         "name": name,
@@ -220,15 +221,32 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.clear()
 
     await update.message.reply_text(
-        "✅ ЗАПИСЬ ПОДТВЕРЖДЕНА!\n\n"
-        f"👤 Имя: {name}\n"
-        f"🕐 Время: {time}\n"
-        "💈 Барбершоп: «Что за лев»\n\n"
-        "Ждём вас! 🦁\n"
+        "ЗАПИСЬ ПОДТВЕРЖДЕНА!\n\n"
+        f"Имя: {name}\n"
+        f"Время: {time}\n"
+        "Барбершоп: «Что за лев»\n\n"
         "Пожалуйста, приходите вовремя."
     )
 
+    await context.bot.send_message(
+        chat_id=7807661442,
+        text=(
+            "🔔 НОВАЯ ЗАПИСЬ!\n\n"
+            f"Клиент: {name}\n"
+            f"Время: {time}\n"
+            "Барбершоп: «Что за лев»"
+        )
+    )
+    
+    
+    
+    
 
+    
+
+  
+
+    
 # =========================
 # КОМАНДА /START
 # =========================
