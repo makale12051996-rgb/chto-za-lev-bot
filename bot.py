@@ -143,14 +143,15 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("🔙 Назад", callback_data="back")]
         ]
 
+        
         await query.edit_message_text(
-            "📍 БАРБЕРШОП «ЧТО ЗА ЛЕВ»\n\n"
-            "Наш адрес:\n"
-            "📌 Здесь укажи адрес своего барбершопа\n\n"
-            "Если хочешь, я потом помогу добавить сюда "
-            "кнопку с картой.",
+            "📞 КОНТАКТЫ\n\n"
+            "🦁 Барбершоп «Что за лев»\n\n"
+            "📱 Телефон: +998903345667\n\n"
+            "Будем рады видеть вас!",
             reply_markup=InlineKeyboardMarkup(keyboard),
         )
+
         return
 
     # Контакты
